@@ -108,7 +108,7 @@ img{display:block;}
 .letter .cont .info{padding-top:30px}
 .letter .cont .info p{font-size:16px;}
 .letter .cont .info p + p{margin-top:20px}
-#map{width:50%;height:250px;margin:30px auto}
+#map{width:100%;height:250px;margin:30px auto}
 .info_layer{padding:10px;border-radius:10px;border:1px solid #ddd;background-color:#fff;transform:translateY(-90px)}
 .tit_place{display:block;font-weight:bold;text-align:center}
 .wrap_button{margin-top:10px}
