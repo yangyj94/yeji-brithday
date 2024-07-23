@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width,viewport-fit=cover" name="viewport">
+  <title>2024 예지제</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!-- <script src="https://developers.kakao.com/sdk/js/kakao.js"></script> -->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f3e4fbd0810d7f19aa74775a13478f01"></script>
+</head>
+<body>
+  <div class="container">
+    <main id="main" class="main">
+      <div class="wrap_letter">
+        <div class="envelop">
+          <div id="letter" class="letter">
+            <button type="button" class="btn_click" id="btnClick">Click me!</button>
+            <div class="cont">
+              <strong class="title">2024 ㅇㅖㅈㅣ제</strong>
+              <div class="info">
+                <p>일정 : 7/25(목) 19시-24시</p>
+                <p>장소 : 이너프아일랜드 양재점</p>
+                <p>지참 : 양손가득 선물</p>
+              </div>
+              <div id="map"></div>
+            </div>
+          </div>
+          <span class="cursor"></span>
+        </div>
+      </div>
+      <div class="yeji">
+        <img src="images/yeji.png" width="250" alt="">
+      </div>
+      <div class="rolling">
+        <div class="inner">
+          <span>눌러 <span class="cursor"></span></span>
+          <span>눌러 <span class="cursor"></span></span>
+          <span>눌러 <span class="cursor"></span></span>
+          <span>눌러 <span class="cursor"></span></span>
+          <span>눌러 <span class="cursor"></span></span>
+          <span>눌러 <span class="cursor"></span></span>
+          <span>눌러 <span class="cursor"></span></span>
+          <span>눌러 <span class="cursor"></span></span>
+        </div>
+      </div>
+      <div class="bg_choonsik">
+        <div class="wrap_choonsik">
+          <span class="choonsik">
+            <img src="images/choonsik.png" width="80" alt="">
+          </span>
+        </div>  
+        <div class="wrap_choonsik">
+          <span class="choonsik">
+            <img src="images/choonsik.png" width="80" alt="">
+          </span>
+        </div> 
+        <div class="wrap_choonsik">
+          <span class="choonsik">
+            <img src="images/choonsik.png" width="80" alt="">
+          </span>
+        </div> 
+        <div class="wrap_choonsik">
+          <span class="choonsik">
+            <img src="images/choonsik.png" width="80" alt="">
+          </span>
+        </div> 
+        <div class="wrap_choonsik">
+          <span class="choonsik">
+            <img src="images/choonsik.png" width="80" alt="">
+          </span>
+        </div> 
+        <div class="wrap_choonsik">
+          <span class="choonsik">
+            <img src="images/choonsik.png" width="80" alt="">
+          </span>
+        </div> 
+        <div class="wrap_choonsik">
+          <span class="choonsik">
+            <img src="images/choonsik.png" width="80" alt="">
+          </span>
+        </div> 
+        <div class="wrap_choonsik">
+          <span class="choonsik">
+            <img src="images/choonsik.png" width="80" alt="">
+          </span>
+        </div> 
+        <div class="wrap_choonsik">
+          <span class="choonsik">
+            <img src="images/choonsik.png" width="80" alt="">
+          </span>
+        </div> 
+      </div>
+    </main>
+  </div>
+  <script>
+    const letterBtn = document.getElementById('btnClick');
+    const main = document.getElementById('main');
+
+    letterBtn.addEventListener('click', function(){
+      main.classList.add('on');
+    });
+
+    kakao.maps.load(() => {
+            var mapContainer = document.getElementById('map');
+            var mapOption = { 
+                center: new kakao.maps.LatLng(37.50110, 127.0277),
+                level: 3
+            };
+
+            var map = new kakao.maps.Map(mapContainer, mapOption);
+
+            // 마커가 표시될 위치입니다 
+            var markerPosition  = new kakao.maps.LatLng(37.50110, 127.0277); 
+
+            // 마커를 생성합니다
+            var marker = new kakao.maps.Marker({
+                position: markerPosition
+            });
+
+            marker.setMap(map);
+
+            var content = '<div class="info_layer"><strong class="tit_place">강남 엠투포차</strong><div class="wrap_button"><a href="https://kko.to/VHKGfWwley" target="_blank">카카오맵 보기</a> <a href="https://map.kakao.com/link/to/강남역 엠투포차,37.50110, 127.0277" target="_blank">길찾기</a></div></div>';
+
+            // 커스텀 오버레이가 표시될 위치입니다 
+            var position = new kakao.maps.LatLng(37.50110, 127.0277);  
+
+            // 커스텀 오버레이를 생성합니다
+            var customOverlay = new kakao.maps.CustomOverlay({
+                position: position,
+                content: content   
+            });
+
+            // 커스텀 오버레이를 지도에 표시합니다
+            customOverlay.setMap(map);
+        });
+  </script>
+</body>
+</html>
