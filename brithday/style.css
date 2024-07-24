@@ -100,8 +100,9 @@ img{display:block;}
 .main.on .wrap_letter, .main.on .wrap_letter .envelop{position:static;}
 .main.on .wrap_letter .envelop{background:none;}
 .main.on .wrap_letter .envelop::after{display:none;}
-.main.on .wrap_letter .envelop .letter{position:fixed;top:20px;max-width:400px;animation: letterOn .3s linear forwards, borderChange .3s linear infinite}
-.main.on .bg_choonsik, .main.on .rolling, .main.on .yeji{display:none;}
+.main.on .wrap_letter .envelop .letter{position:fixed;top:20px;z-index:10;max-width:400px;animation: letterOn .3s linear forwards, borderChange .3s linear infinite}
+.main.on .rolling, .main.on .yeji{display:none;}
+.main.on .bg_choonsik{transform:translateY(-300px) translateX(-30px);}
 .main.on .letter .btn_click, .main.on .cursor{display:none;}
 .main.on .letter .cont{display:block;text-align:center;opacity:1;}
 .main.on .letter{display: flex;align-items: center;justify-content: center;border: 10px solid #fff;}
