@@ -116,7 +116,7 @@ img{display:block;}
 .wrap_button a{padding:5px 10px;border-radius:20px;font-size:12px;font-weight:bold;line-height:30px;color:#333;background-color:#eee;text-decoration:none}
 .star{display: inline-block;animation: colorChange .1s linear infinite}
 
-.yeji2{position:absolute;transform:rotate(70deg);top:60px;left:-100px;display:none;animation: yejiS .7s .2s linear infinite;}
+.yeji2{position:absolute;z-index:999;transform:rotate(70deg);top:60px;left:-100px;display:none;animation: yejiS .7s .2s linear infinite;}
 .yeji2.midium{transform:rotate(-70deg);top:155px;left:auto;right:-140px;animation: yejiM .7s .8s linear infinite;}
 .yeji2.big{transform:translateX(-50%);top:auto;left:50%;bottom:-200px;animation: yejiB .7s 1s linear infinite;}
 
