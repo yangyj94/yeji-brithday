@@ -100,68 +100,108 @@ img{display:block;}
 .main.on .wrap_letter, .main.on .wrap_letter .envelop{position:static;}
 .main.on .wrap_letter .envelop{background:none;}
 .main.on .wrap_letter .envelop::after{display:none;}
-.main.on .wrap_letter .envelop .letter{position:fixed;top:20px;animation: letterOn .5s linear forwards}
+.main.on .wrap_letter .envelop .letter{position:fixed;top:20px;animation: letterOn .3s linear forwards, borderChange .3s linear infinite}
 .main.on .bg_choonsik, .main.on .rolling, .main.on .yeji{display:none;}
 .main.on .letter .btn_click, .main.on .cursor{display:none;}
 .main.on .letter .cont{display:block;text-align:center;opacity:1;}
-.main.on .letter{display: flex;align-items: center;justify-content: center;}
+.main.on .letter{display: flex;align-items: center;justify-content: center;border: 10px solid #fff;}
 .letter .cont .title{font-size:24px;font-weight:700;}
-.letter .cont .info{padding-top:30px}
-.letter .cont .info p{font-size:16px;}
-.letter .cont .info p + p{margin-top:20px}
-#map{width:280px;height:300px;margin:30px auto}
+.letter .cont .info{margin-top:20px;padding:10px;border-radius:5px;background-color:#f5f5f5;}
+.letter .cont .info p{font-size:16px;font-weight: 700;}
+.letter .cont .info p + p{margin-top:10px}
+#map{width:280px;height:300px;margin:20px auto 0}
 .info_layer{padding:10px;border-radius:10px;border:1px solid #ddd;background-color:#fff;transform:translateY(-90px)}
 .tit_place{display:block;font-weight:bold;text-align:center}
 .wrap_button{margin-top:10px}
 .wrap_button a{padding:5px 10px;border-radius:20px;font-size:12px;font-weight:bold;line-height:30px;color:#333;background-color:#eee;text-decoration:none}
+.star{display: inline-block;animation: colorChange .1s linear infinite}
+
+.yeji2{position:absolute;transform:rotate(70deg);top:60px;left:-100px;display:none;animation: yejiS .7s .2s linear infinite;}
+.yeji2.midium{transform:rotate(-70deg);top:155px;left:auto;right:-140px;animation: yejiM .7s .8s linear infinite;}
+.yeji2.big{transform:translateX(-50%);top:auto;left:50%;bottom:-200px;animation: yejiB .7s 1s linear infinite;}
+
+.main.on .yeji2{display:block;}
     
 
+@keyframes yejiS{
+  0%{left:-100px}
+  50%{left:-20px}
+  100%{left:-100px}
+}
+@keyframes yejiM{
+  0%{right:-100px}
+  50%{right:-24px}
+  100%{right:-100px}
+}
 
+@keyframes yejiB{
+  0%{bottom:-120px}
+  50%{bottom:0px}
+  100%{bottom:-120px}
+}
+@-webkit-keyframes yejiS{
+  0%{left:-100px}
+  50%{left:-20px}
+  100%{left:-100px}
+}
+@-webkit-keyframes yejiM{
+  0%{right:-100px}
+  50%{right:-24px}
+  100%{right:-100px}
+}
 
-
+@-webkit-keyframes yejiB{
+  0%{bottom:-120px}
+  50%{bottom:0px}
+  100%{bottom:-120px}
+}
 
 
 @keyframes bounce{
-  0%{
-    right:45px
-  }
-  50%{
-    right:55px
-  }
-  100%{
-    right:45px
-  }
+  0%{right:45px}
+  50%{right:55px}
+  100%{right:45px}
 }
 
 @keyframes marquee {
   from { transform: translateX(0%); }
   to { transform: translateX(-100%); }
 }
-@keyframes scale {
-  0% { transform: scale(1) translateX(-50%) translateY(-50%); }
-  50% { transform: scale(1.05) translateX(-50%) translateY(-50%); }
-  100% { transform: scale(1) translateX(-50%) translateY(-50%); }
-}
 
 @keyframes colorChange {
-  0%{
-    color:red
-  }
-  20%{
-    color:orange
-  }
-  40%{
-    color:yellow
-  }
-  60%{
-    color:green
-  }
-  80%{
-    color:blue
-  }
-  100%{
-    color:purple
-  }
+  0%{color:red}
+  20%{color:orange}
+  40%{color:yellow}
+  60%{color:green}
+  80%{color:blue}
+  100%{color:purple}
+}
+@keyframes borderChange {
+  0%{border-color:red}
+  20%{border-color:orange}
+  40%{border-color:yellow}
+  60%{border-color:green}
+  80%{border-color:blue}
+  100%{border-color:purple}
+}
+@-webkit-keyframes bounce{
+  0%{right:45px}
+  50%{right:55px}
+  100%{right:45px}
+}
+
+@-webkit-keyframes marquee {
+  from { transform: translateX(0%); }
+  to { transform: translateX(-100%); }
+}
+
+@-webkit-keyframes colorChange {
+  0%{color:red}
+  20%{color:orange}
+  40%{color:yellow}
+  60%{color:green}
+  80%{color:blue}
+  100%{color:purple}
 }
 
 @keyframes fall{
@@ -182,9 +222,22 @@ img{display:block;}
   0%{width:180px;height:170px;}
   100%{width:calc(100vw - 40px);height:calc(100vh - 40px);}
 }
+@-webkit-keyframes fall{
+  0%{top:-50px}
+  100%{top:100vh}
+}
+@-webkit-keyframes sideway{
+  0%{left:0}
+  50%{left:20px}
+  100%{left:0}
+}
+@-webkit-keyframes turn{
+  0%{transform:rotate(0);}
+  100%{transform:rotate(360deg);}
+}
 
-@keyframes scaleOn {
-  0% { transform: scale(0); }
-  100% { transform: scale(1);}
+@-webkit-keyframes letterOn{
+  0%{width:180px;height:170px;}
+  100%{width:calc(100vw - 40px);height:calc(100vh - 40px);}
 }
 
